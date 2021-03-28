@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <select id="option-busqueda">
+        <option value="author">AUTOR</option>
+        <option value="title">TITULO</option>
+        <option value="q">CONSULTA</option>
+        <option value="isbn">CÓDIGO DE BARRA</option>
+    </select>
+    <input id="contenido" type="text" placeholder="INGRESE EL AUTOR">
+    <input type="button" value="realizar peticion" id="peticion">
+    <!-- CTRL + / ES PARA COMENTAR AUTOMATICAMENTE UNA LINEA EN VSC -->
+    <!-- class='table' -> es una clase de Bootstrap que b[asicamente] le
+    asigna a mi tablita algunas caracteristicas propias de esta biblioteca de CSS -->
+    <table id="resultados" class="table">
+
+    </table>
+    <script type="module" src="./render.js"></script>
+</body>
+</html>
