@@ -6,24 +6,6 @@ const resultados = document.getElementById('resultados')
 
 bot.addEventListener('click',realizarPeticion)
 
-opcion.addEventListener('change',function(event){
-    console.log(event.target.value)
-        switch(event.target.value){
-            case "author":
-                text.placeholder = "INGRESE EL AUTOR";
-                break;
-            case "title":
-                text.placeholder = "INGRESE EL TITULO DEL LIBRO";
-                break;
-            case "q":
-                text.placeholder = "INGRESE LA CONSULTA";
-            break;
-            case "isbn":
-                text.placeholder = "INGRESE EL CODIGO";
-            break;
-        }
-})
-
 async function realizarPeticion(){
     console.log(opcion.value)
         switch(opcion.value){
@@ -51,7 +33,7 @@ async function realizarPeticion(){
                                     window.comunicacion.sendMessage(llave)
                                 })
                                 
-                                if(impresion){
+                                if(impresion){  
                                     if(impresion==0){
                                         impresion = "NA"
                                     }
@@ -86,6 +68,24 @@ async function realizarPeticion(){
                 break;
         }
 }
+
+opcion.addEventListener('change',function(event){
+    console.log(event.target.value)
+        switch(event.target.value){
+            case "author":
+                text.placeholder = "INGRESE EL AUTOR";
+                break;
+            case "title":
+                text.placeholder = "INGRESE EL TITULO DEL LIBRO";
+                break;
+            case "q":
+                text.placeholder = "INGRESE LA CONSULTA";
+            break;
+            case "isbn":
+                text.placeholder = "INGRESE EL CODIGO";
+            break;
+        }
+})
 
 window.comunicacion.receiveMessage('respuestaRenderer',(event,args) => {
     if(args[1]=='libreAgregado_true'){
